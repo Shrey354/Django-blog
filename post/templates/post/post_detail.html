@@ -1,0 +1,15 @@
+{% extends "post/base.html" %}
+{% block content %}
+           <div class="card">
+             <div class="card-header"> 
+                <img class="rounded-circle article-img" height=60 width=60 src="{{object.author.profile.image.url}}">
+                <a class="mr-2" href="#">{{ object.author }}</a>
+                <small class="text-muted">{{ object.date_posted| date:"F d, Y"}}</small>
+            </div>
+            <div class="card-body">
+                <a class="mr-2" >{{ object.title }}</a><br><br>
+                <h5 class="card-title">{{ object.content }}</h5>   
+            </div>
+        </div>
+        <br>   
+{% endblock content %}
