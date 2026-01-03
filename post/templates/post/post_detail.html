@@ -5,6 +5,15 @@
                 <img class="rounded-circle article-img" height=60 width=60 src="{{object.author.profile.image.url}}">
                 <a class="mr-2" href="#">{{ object.author }}</a>
                 <small class="text-muted">{{ object.date_posted| date:"F d, Y"}}</small>
+                {% if object.author == user %}
+                    <div>
+
+                        <a class="btn btn-secondary btn-sm mt-1 mb-1" href ="{% url 'post-update' object.id %}">Update</a>
+                        <a class="btn btn-danger btn-sm mt-1 mb-1" href ="{% url 'post-delete' object.id %}">Delete</a>
+
+                    </div>
+
+                {%endif%}
             </div>
             <div class="card-body">
                 <a class="mr-2" >{{ object.title }}</a><br><br>
